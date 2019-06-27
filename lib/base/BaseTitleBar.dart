@@ -2,12 +2,16 @@ import 'package:flutter/material.dart';
 
 class BaseTitleBar extends StatelessWidget {
   String title;
+  VoidCallback leftClick;
   IconData leftIcon = Icons.arrow_back_ios;
   final List<Widget> actionsView;
-
+  final parentContext;
 
   BaseTitleBar(this.title,
-      {this.leftIcon, this.actionsView});
+      {this.leftIcon,
+      this.leftClick,
+      this.actionsView,
+      @required this.parentContext});
 
   @override
   Widget build(BuildContext context) {
@@ -28,15 +32,25 @@ class BaseTitleBar extends StatelessWidget {
         /// 左边图标，视情况而定，自己穿参数
         icon: Icon(this.leftIcon),
         color: Colors.white,
-        onPressed: () {
-          Navigator.pop(context);
-        },
+//        onPressed: this.leftClick,
+        onPressed: _onClick,
       ),
       brightness: Brightness.dark,
       elevation: 2.0,
       centerTitle: true,
       actions: this.actionsView,
     );
+  }
+
+  void _onClick() {
+    if (this.parentContext == null) {
+//      new GestureDetector(
+//        onTap: this.leftClick,
+//      );
+       this.leftClick;
+    } else {
+      Navigator.pop(parentContext);
+    }
   }
 }
 
@@ -50,7 +64,7 @@ class RightView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var containView;
-    if (title != Null) {
+    if (title != null) {
       containView = new Container(
         alignment: Alignment.center,
         padding: EdgeInsets.all(10.0),

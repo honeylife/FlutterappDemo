@@ -35,7 +35,6 @@ class _TabsState extends State<Tabs> {
       appBar: new BaseViewBar(
           childView: new BaseTitleBar(
             "首页",
-            leftIcon: Icons.arrow_back_ios,
             actionsView: <Widget>[
               new RightView(
                 title:"提交" ,
