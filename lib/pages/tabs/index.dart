@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../MyPage.dart';
+import 'package:flutterapp/twopages/MyPage.dart';
 
 class IndexPagee extends StatefulWidget {
   @override

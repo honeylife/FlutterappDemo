@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'BaseTitilebar.dart';
 import 'pages/Tabs.dart';
-import 'package:flutterapp/MyPage.dart';
+import 'package:flutterapp/twopages/MyPage.dart';
 
 class HomePageWindow extends StatelessWidget {
   @override

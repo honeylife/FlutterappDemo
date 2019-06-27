@@ -1,6 +1,6 @@
 
 import 'package:flutter/material.dart';
-import 'base/BaseTitleBar.dart';
+import '../base/BaseTitleBar.dart';
 class MyPage extends StatelessWidget {
   final String title;
   MyPage({this.title}){
